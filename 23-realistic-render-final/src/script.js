@@ -70,6 +70,7 @@ gui.add(debugObject, 'envMapIntensity').min(0).max(10).step(0.001).onChange(upda
  */
 gltfLoader.load(
     '/models/FlightHelmet/glTF/FlightHelmet.gltf',
+    // '/models/hamburger.glb',
     (gltf) =>
     {
         gltf.scene.scale.set(10, 10, 10)
