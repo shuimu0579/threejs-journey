@@ -28,8 +28,12 @@ const scene = new THREE.Scene()
  */
 const updateAllMaterials = () =>
 {
+    console.log('scene', scene);
+
     scene.traverse((child) =>
     {
+        console.log('child', child)
+        // 通过下面的判断条件，只过滤出Mesh
         if(child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial)
         {
             // child.material.envMap = environmentMap
