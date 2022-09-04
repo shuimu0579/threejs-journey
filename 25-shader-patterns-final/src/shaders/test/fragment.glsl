@@ -71,124 +71,163 @@ void main()
 
     // // Pattern 3
     // float strength = vUv.x;
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 4
     // float strength = vUv.y;
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 5
     // float strength = 1.0 - vUv.y;
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 6
     // float strength = vUv.y * 10.0;
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 7
+    // // mod vUv.y * 10.0 除以 1.0 产生的余数
     // float strength = mod(vUv.y * 10.0, 1.0);
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 8
     // float strength = mod(vUv.y * 10.0, 1.0);
+    // // step => strength = strength < 0.5 ? 0.0 : 1.0;
     // strength = step(0.5, strength);
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 9
     // float strength = mod(vUv.y * 10.0, 1.0);
+    // // step => strength = strength < 0.8 ? 0.0 : 1.0;
     // strength = step(0.8, strength);
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 10
     // float strength = mod(vUv.x * 10.0, 1.0);
     // strength = step(0.8, strength);
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 11
     // float strength = step(0.8, mod(vUv.x * 10.0, 1.0));
     // strength += step(0.8, mod(vUv.y * 10.0, 1.0));
     // strength = clamp(strength, 0.0, 1.0);
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 12
     // float strength = step(0.8, mod(vUv.x * 10.0, 1.0));
     // strength *= step(0.8, mod(vUv.y * 10.0, 1.0));
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 13
     // float strength = step(0.4, mod(vUv.x * 10.0, 1.0));
     // strength *= step(0.8, mod(vUv.y * 10.0, 1.0));
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 14
     // float barX = step(0.4, mod(vUv.x * 10.0, 1.0)) * step(0.8, mod(vUv.y * 10.0, 1.0));
     // float barY = step(0.8, mod(vUv.x * 10.0, 1.0)) * step(0.4, mod(vUv.y * 10.0, 1.0));
     // float strength = barX + barY;
     // strength = clamp(strength, 0.0, 1.0);
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 15
-    // float barX = step(0.4, mod(vUv.x * 10.0 - 0.2, 1.0)) * step(0.8, mod(vUv.y * 10.0, 1.0));
-    // float barY = step(0.8, mod(vUv.x * 10.0, 1.0)) * step(0.4, mod(vUv.y * 10.0 - 0.2, 1.0));
+    // float barX = step(0.4, mod(vUv.x * 10.0, 1.0)) * step(0.8, mod(vUv.y * 10.0 + 0.2, 1.0));
+    // float barY = step(0.8, mod(vUv.x * 10.0 + 0.2, 1.0)) * step(0.4, mod(vUv.y * 10.0, 1.0));
     // float strength = barX + barY;
     // strength = clamp(strength, 0.0, 1.0);
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 16
     // float strength = abs(vUv.x - 0.5);
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 17
     // float strength = min(abs(vUv.x - 0.5), abs(vUv.y - 0.5));
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 18
     // float strength = max(abs(vUv.x - 0.5), abs(vUv.y - 0.5));
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 19
     // float strength = step(0.2, max(abs(vUv.x - 0.5), abs(vUv.y - 0.5)));
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 20
     // float strength = step(0.2, max(abs(vUv.x - 0.5), abs(vUv.y - 0.5)));
     // strength *= 1.0 - step(0.25, max(abs(vUv.x - 0.5), abs(vUv.y - 0.5)));
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 21
     // float strength = floor(vUv.x * 10.0) / 10.0;
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 22
     // float strength = floor(vUv.x * 10.0) / 10.0 * floor(vUv.y * 10.0) / 10.0;
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 23
+    // // random不是GLSL的方法，其算法需要自己写
     // float strength = random(vUv);
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 24
     // vec2 gridUv = vec2(floor(vUv.x * 10.0) / 10.0, floor(vUv.y * 10.0) / 10.0);
     // float strength = random(gridUv);
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 25
     // vec2 gridUv = vec2(floor(vUv.x * 10.0) / 10.0, floor((vUv.y + vUv.x * 0.5) * 10.0) / 10.0);
     // float strength = random(gridUv);
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 26
     // float strength = length(vUv);
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 27
     // float strength = distance(vUv, vec2(0.5));
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 28
     // float strength = 1.0 - distance(vUv, vec2(0.5));
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 29
     // float strength = 0.015 / (distance(vUv, vec2(0.5)));
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 30
     // float strength = 0.15 / (distance(vec2(vUv.x, (vUv.y - 0.5) * 5.0 + 0.5), vec2(0.5)));
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 31
     // float strength = 0.15 / (distance(vec2(vUv.x, (vUv.y - 0.5) * 5.0 + 0.5), vec2(0.5)));
     // strength *= 0.15 / (distance(vec2(vUv.y, (vUv.x - 0.5) * 5.0 + 0.5), vec2(0.5)));
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 32
+    // // rotate 也不是GLSL内置的方法
     // vec2 rotatedUv = rotate(vUv, PI * 0.25, vec2(0.5));
     // float strength = 0.15 / (distance(vec2(rotatedUv.x, (rotatedUv.y - 0.5) * 5.0 + 0.5), vec2(0.5)));
     // strength *= 0.15 / (distance(vec2(rotatedUv.y, (rotatedUv.x - 0.5) * 5.0 + 0.5), vec2(0.5)));
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 33
     // float strength = step(0.5, distance(vUv, vec2(0.5)) + 0.25);
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 34
     // float strength = abs(distance(vUv, vec2(0.5)) - 0.25);
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 35
     // float strength = step(0.01, abs(distance(vUv, vec2(0.5)) - 0.25));
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 36
     // float strength = 1.0 - step(0.01, abs(distance(vUv, vec2(0.5)) - 0.25));
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 37
     // vec2 wavedUv = vec2(
@@ -196,6 +235,7 @@ void main()
     //     vUv.y + sin(vUv.x * 30.0) * 0.1
     // );
     // float strength = 1.0 - step(0.01, abs(distance(wavedUv, vec2(0.5)) - 0.25));
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 38
     // vec2 wavedUv = vec2(
@@ -203,6 +243,7 @@ void main()
     //     vUv.y + sin(vUv.x * 30.0) * 0.1
     // );
     // float strength = 1.0 - step(0.01, abs(distance(wavedUv, vec2(0.5)) - 0.25));
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 39
     // vec2 wavedUv = vec2(
@@ -210,52 +251,62 @@ void main()
     //     vUv.y + sin(vUv.x * 100.0) * 0.1
     // );
     // float strength = 1.0 - step(0.01, abs(distance(wavedUv, vec2(0.5)) - 0.25));
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 40
     // float angle = atan(vUv.x, vUv.y);
     // float strength = angle;
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 41
     // float angle = atan(vUv.x - 0.5, vUv.y - 0.5);
     // float strength = angle;
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 42
     // float angle = atan(vUv.x - 0.5, vUv.y - 0.5) / (PI * 2.0) + 0.5;
     // float strength = angle;
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 43
     // float angle = atan(vUv.x - 0.5, vUv.y - 0.5) / (PI * 2.0) + 0.5;
     // float strength = mod(angle * 20.0, 1.0);
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 44
     // float angle = atan(vUv.x - 0.5, vUv.y - 0.5) / (PI * 2.0) + 0.5;
     // float strength = sin(angle * 100.0);
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 45
     // float angle = atan(vUv.x - 0.5, vUv.y - 0.5) / (PI * 2.0) + 0.5;
     // float radius = 0.25 + sin(angle * 100.0) * 0.02;
     // float strength = 1.0 - step(0.01, abs(distance(vUv, vec2(0.5)) - radius));
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 46
+    // // cnoise算法--模拟自然界的云和水流 
     // float strength = cnoise(vUv * 10.0);
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 47
     // float strength = step(0.0, cnoise(vUv * 10.0));
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 48
     // float strength = 1.0 - abs(cnoise(vUv * 10.0));
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
     // // Pattern 49
     // float strength = sin(cnoise(vUv * 10.0) * 20.0);
+    // gl_FragColor = vec4(strength,strength,strength, 1.0);
 
-    // Pattern 50
+    // // Pattern 50
     float strength = step(0.9, sin(cnoise(vUv * 10.0) * 20.0));
 
     // Final color
     vec3 blackColor = vec3(0.0);
     vec3 uvColor = vec3(vUv, 1.0);
     vec3 mixedColor = mix(blackColor, uvColor, strength);
-
-    // gl_FragColor = vec4(vec3(strength), 1.0);
     gl_FragColor = vec4(mixedColor, 1.0);
 }
