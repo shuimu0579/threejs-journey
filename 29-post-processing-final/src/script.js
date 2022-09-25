@@ -147,6 +147,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 /**
  * Post processing
  */
+
 let RenderTargetClass = null
 
 if(renderer.getPixelRatio() === 1 && renderer.capabilities.isWebGL2)
@@ -160,6 +161,7 @@ else
     console.log('Using WebGLRenderTarget')
 }
 
+// 解决设置rgbShiftPass之后场景变暗的问题
 const renderTarget = new RenderTargetClass(
     800,
     600,
@@ -182,13 +184,13 @@ effectComposer.addPass(renderPass)
 
 // Dot screen pass
 const dotScreenPass = new DotScreenPass()
-dotScreenPass.enabled = false
+dotScreenPass.enabled = false // enabled 为 true， 开启
 effectComposer.addPass(dotScreenPass)
 
 // Glitch pass
 const glitchPass = new GlitchPass()
 glitchPass.goWild = true
-glitchPass.enabled = false
+glitchPass.enabled = false // enabled 为 true， 开启
 effectComposer.addPass(glitchPass)
 
 // RGB Shift pass
@@ -301,6 +303,7 @@ const DisplacementShader = {
 }
 
 const displacementPass = new ShaderPass(DisplacementShader)
+displacementPass.enabled = true // enable为false 就会关闭这个displacementPass效果
 displacementPass.material.uniforms.uTime.value = 0
 displacementPass.material.uniforms.uNormalMap.value = textureLoader.load('/textures/interfaceNormalMap.png')
 effectComposer.addPass(displacementPass)
