@@ -21,7 +21,7 @@ const loadingManager = new THREE.LoadingManager(
             // Update loadingBarElement
             loadingBarElement.classList.add('ended')
             loadingBarElement.style.transform = ''
-        }, 500)
+        }, 500) // 这里的500与 .loading-bar的属性transition: transform 0.5s对应
     },
 
     // Progress
